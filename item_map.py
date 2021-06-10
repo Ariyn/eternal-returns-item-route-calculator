@@ -106,6 +106,7 @@ class Item:
     def parse_ability(self, ability):
         abilities = []
         for s in ability.split(",")[:-1]:
+            # print(s)
             v = s.split(" ")
             abilities.append(Ability(v[0], v[1]))
 
