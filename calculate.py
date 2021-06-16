@@ -1,5 +1,7 @@
 import json
 import codecs
+import sys
+import os
 # import math
 # import enum
 # from json import JSONEncoder, JSONDecoder 
@@ -105,7 +107,8 @@ def load_mapped_items():
     global items
     global items_by_name
     global items_by_category
-    buffer = codecs.open("mapped_items.json", "r", "utf-8").read()
+
+    buffer = codecs.open(os.path.join(sys.path[0], "data/mapped_items.json"), "r", "utf-8").read()
     mapped_items = json.loads(buffer)
 
     for item in mapped_items:

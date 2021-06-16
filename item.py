@@ -1,6 +1,8 @@
 import json
 import enum
 import codecs
+import sys
+import os
 
 locations = {}
 categories = {}
@@ -221,7 +223,7 @@ def animal_index(item_code, v):
 
 def load_locations():
     global locations
-    buffer = codecs.open("locations.json", "r", "utf-8").read()
+    buffer = codecs.open(os.path.join(sys.path[0],"data/locations.json"), "r", "utf-8").read()
     location_names = json.loads(buffer)
 
     for index, name in enumerate(location_names):
@@ -230,7 +232,7 @@ def load_locations():
 
 def load_animals():
     global animals
-    buffer = codecs.open("animals.json", "r", "utf-8").read()
+    buffer = codecs.open(os.path.join(sys.path[0],"data/animals.json"), "r", "utf-8").read()
     animal_names = json.loads(buffer)
 
     for index, name in enumerate(animal_names):
@@ -239,7 +241,7 @@ def load_animals():
 
 def load_abilities():
     global abilities
-    buffer = codecs.open("abilities.json", "r", "utf-8").read()
+    buffer = codecs.open(os.path.join(sys.path[0],"data/abilities.json"), "r", "utf-8").read()
     ability_names = json.loads(buffer)
 
     for index, name in ability_names.items():
@@ -248,7 +250,7 @@ def load_abilities():
 
 def load_categories():
     global categories
-    buffer = codecs.open("categories.json", "r", "utf-8").read()
+    buffer = codecs.open(os.path.join(sys.path[0],"data/categories.json"), "r", "utf-8").read()
     category_names = json.loads(buffer)
 
     for index, name in category_names.items():
@@ -257,7 +259,7 @@ def load_categories():
 
 def load_items():
     items = []
-    buffer = codecs.open("items.json", "r", "utf-8").read()
+    buffer = codecs.open(os.path.join(sys.path[0],"data/items.json"), "r", "utf-8").read()
     item_datas = json.loads(buffer)
 
     for key, item in item_datas.items():

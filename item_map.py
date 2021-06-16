@@ -1,5 +1,7 @@
 import json
 import codecs
+import sys
+import os
 # import math
 # import enum
 # from json import JSONEncoder, JSONDecoder 
@@ -254,7 +256,7 @@ def __main__():
     
     data = json.dumps(item_dicts, ensure_ascii=False)
 
-    codecs.open("mapped_items.json", "w", "utf-8").write(data)
+    codecs.open(os.path.join(sys.path[0], "data/mapped_items.json"), "w", "utf-8").write(data)
 
 if __name__ == "__main__":
     __main__()
