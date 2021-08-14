@@ -75,12 +75,12 @@ def print_subitem_tree(name):
         for subitem in item['receipe_items']:
             print_subitem_tree(subitem.__dict__['name'])
 
+load_all()
+load_mapped_items()
+map_items()
+
 def main():
-    load_all()
-    load_mapped_items()
-    map_items()
     str = input('아이템을 입력하시오 :')
-    
     print_item_tree(str)
 
 if __name__ == "__main__":
