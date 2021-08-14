@@ -9,19 +9,16 @@ categories = {}
 animals = {}
 abilities = {}
 
-
 class DropRatio(enum.Enum):
     Green = enum.auto()
     Blue = enum.auto()
     Red = enum.auto()
-
 
 DropRatioMap = {
     DropRatio.Green: 75,
     DropRatio.Blue: 50,
     DropRatio.Red: 0,
 }
-
 
 class Location:
     def __init__(self, name, code):
@@ -164,23 +161,6 @@ class Item:
         self.locations = []
         for l in item_dict["locations"]:
             self.locations.append(LocationDrop(locations[l["code"]], l["amount"]))
-            # self.locations.append(LocationDrop(locations[l["code"]], self, l["amount"]))
-
-        # droppable_animals = []
-        # for h in self.hunts:
-        #     droppable_animals.append({
-        #         "code": h.animal.code,
-        #         "name": h.animal.name,
-        #         "amount": h.amount,
-        #         "ratio": DropRatioMap[h.ratio],
-        #     })
-
-        # abilities = []
-        # for a in self.abilities:
-        #     abilities.append({
-        #         "type": a.typ,
-        #         "effect": a.effect,
-        #     })
 
         return self
 
